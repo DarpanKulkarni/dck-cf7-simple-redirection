@@ -1,32 +1,34 @@
-(function ($) {
-    'use strict';
+(function () {
+    document.addEventListener('wpcf7mailsent', function (e) {
+        var dck_cf7_sr = e.detail.apiResponse.dck_cf7_sr;
 
-    /**
-     * All of the code for your public-facing JavaScript source
-     * should reside in this file.
-     *
-     * Note: It has been assumed you will write jQuery code here, so the
-     * $ function reference has been prepared for usage within the scope
-     * of this function.
-     *
-     * This enables you to define handlers, for when the DOM is ready:
-     *
-     * $(function() {
-     *
-     * });
-     *
-     * When the window is loaded:
-     *
-     * $( window ).load(function() {
-     *
-     * });
-     *
-     * ...and/or other possibilities.
-     *
-     * Ideally, it is not considered best practise to attach more than a
-     * single DOM-ready or window-load handler for a particular page.
-     * Although scripts in the WordPress core, Plugins and Themes may be
-     * practising this, we should strive to set a better example in our own work.
-     */
+        if (dck_cf7_sr.enabled) {
+            var new_tab = dck_cf7_sr.new_tab;
+            var delay = dck_cf7_sr.delay * 1000;
 
+            setTimeout(function () {
+                if (dck_cf7_sr.type === 'page') {
+                    redirect(dck_cf7_sr.page, new_tab);
+                } else if (dck_cf7_sr.type === 'url' && isValidHttpUrl(dck_cf7_sr.url)) {
+                    redirect(dck_cf7_sr.url, new_tab);
+                }
+            }, delay);
+        }
+
+        function redirect(destination, new_tab = false) {
+            new_tab ? window.open(destination, '_blank') : window.location.href = destination;
+        }
+
+        function isValidHttpUrl(string) {
+            var url;
+
+            try {
+                url = new URL(string);
+            } catch (_) {
+                return false;
+            }
+
+            return url.protocol === "http:" || url.protocol === "https:";
+        }
+    }, false);
 })(jQuery);
