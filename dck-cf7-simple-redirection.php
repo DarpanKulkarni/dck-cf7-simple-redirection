@@ -1,20 +1,18 @@
 <?php
 /**
- * Plugin Name: Simple Redirection for Contact Form 7
- * Plugin URI:  https://wp-plugins.darpan.co/simple-redirection-for-contact-form-7
- * Description: Simple redirection addon for Contact Form 7, allows you to redirect to an existing page or a custom URL after form submission.
- * Version:     1.0.0
- * Author:      Darpan Kulkarni
- * Author URI:  https://darpan.co
- * License:     GPL-2.0+
- * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain: dck-cf7-simple-redirection
- * Domain Path: /languages
- *
- * Todo:        add validation for fields, change delay from ms to seconds
+ * Plugin Name:     Simple Redirection for Contact Form 7
+ * Plugin URI:      https://darpan.co/wordpress-plugins/simple-redirection-for-contact-form-7
+ * Description:     Simple redirection addon for Contact Form 7, allows you to redirect to an existing page or a custom URL after form submission.
+ * Version:         1.0.0
+ * Author:          Darpan Kulkarni
+ * Author URI:      https://darpan.co
+ * License:         GPL-2.0+
+ * License URI:     http://www.gnu.org/licenses/gpl-2.0.txt
+ * Text Domain:     dck-cf7-simple-redirection
+ * Domain Path:     /languages
  */
 
-if (!defined('WPINC')) {
+if ( ! defined('WPINC')) {
     die;
 }
 
