@@ -103,7 +103,7 @@ class Dck_Cf7_Simple_Redirection_Panel
                     <th><label for="dck_cf7_sr_new_tab"><?php _e('Open in new tab:', 'dck-cf7-simple-redirection') ?></label></th>
                     <td>
                         <input type="checkbox" name="dck_cf7_sr_new_tab" id="dck_cf7_sr_new_tab" <?php echo $new_tab ? 'checked' : '' ?>>
-                        <div class="warning"><?php _e('This option depends on browser settings, browsers often block popup windows.', 'dck-cf7-simple-redirection') ?></div>
+                        <div class="warning"><?php _e('This option depends on the browser settings, browsers often block popup windows.', 'dck-cf7-simple-redirection') ?></div>
                     </td>
                 </tr>
 
