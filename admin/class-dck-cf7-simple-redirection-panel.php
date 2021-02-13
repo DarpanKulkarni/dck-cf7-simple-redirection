@@ -53,7 +53,7 @@ class Dck_Cf7_Simple_Redirection_Panel
         <p>
             <a href="https://darpan.co/wordpress-plugins/simple-redirection-for-contact-form-7" target="_blank"><?php _e('Documentation', 'dck-cf7-simple-redirection') ?></a> |
             <a href="https://wordpress.org/plugins/simple-redirection-for-contact-form-7" target="_blank"><?php _e('Rate this plugin', 'dck-cf7-simple-redirection') ?></a> |
-            <a href="https://wp-plugins.darpan.co" target="_blank"><?php _e('More plugins', 'dck-cf7-simple-redirection') ?></a>
+            <a href="https://darpan.co/wordpress-plugins" target="_blank"><?php _e('More plugins', 'dck-cf7-simple-redirection') ?></a>
         </p>
         <hr>
         <?php
