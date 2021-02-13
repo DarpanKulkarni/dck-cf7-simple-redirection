@@ -1,9 +1,10 @@
-=== Plugin Name ===
+=== Simple Redirection for Contact Form 7 ===
 Contributors: mrdarpan
 Donate link: https://darpan.co
 Tags: contact form 7 redirection, redirection, cf7 redirect, simple redirection, redirect form, cf7 simple redirection
 Requires at least: 3.0.1
 Tested up to: 5.6.1
+Requires PHP: 5.6
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -24,6 +25,13 @@ Features:
 Requirements:
 
 *   Contact Form 7 version 5.2 or above
+
+== Frequently Asked Questions ==
+
+= Why destination page/URL does not open in new tab for some users? =
+
+Open in new tab option depends on the browser settings, browsers often block popup windows for security reasons.
+
 
 == Installation ==
 
