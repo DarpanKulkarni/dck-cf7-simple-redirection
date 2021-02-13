@@ -16,10 +16,10 @@ Simple redirection addon for Contact Form 7, allows you to redirect to an existi
 
 Features:
 
-*   Redirect to predefined page
-*   Redirect to custom URL
-*   Open destination page or URL in new tab
-*   Add delay before redirection
+*   Redirect to a predefined page
+*   Redirect to a custom URL
+*   Open destination page or URL in the new tab
+*   Add a delay before redirection
 
 Requirements:
 
@@ -29,15 +29,15 @@ Requirements:
 
 1. Upload the entire `dck-cf7-simple-redirection` directory to the `/wp-content/plugins/` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Use `Simple Redirection` tab in your Contact Form 7 editor to configure the plugin.
+3. Use `Simple Redirection` panel in your Contact Form 7 editor to configure the plugin.
 
 == Screenshots ==
 
-1. Redirect to selected page
-2. Redirect to custom URL
-3. Open link in new window/tab, add delay
+1. Redirect to a selected page
+2. Redirect to a custom URL
+3. Open link in new window/tab, add a delay
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.0 =
 * Initial release.
