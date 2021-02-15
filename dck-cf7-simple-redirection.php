@@ -3,7 +3,7 @@
  * Plugin Name:     Simple Redirection for Contact Form 7
  * Plugin URI:      https://darpan.co/wordpress-plugins/simple-redirection-for-contact-form-7
  * Description:     Simple redirection addon for Contact Form 7, allows you to redirect to an existing page or a custom URL after form submission.
- * Version:         1.0.0
+ * Version:         1.0.1
  * Author:          Darpan Kulkarni
  * Author URI:      https://darpan.co
  * License:         GPL-2.0+
@@ -15,6 +15,9 @@
 if ( ! defined('WPINC')) {
     die;
 }
+
+define('DCK_CF7_SIMPLE_REDIRECTION_VERSION', '1.0.1');
+define('DCK_CF7_SIMPLE_REDIRECTION_NAME', 'dck-cf7-simple-redirection');
 
 require plugin_dir_path(__FILE__) . 'includes/class-dck-cf7-simple-redirection.php';
 

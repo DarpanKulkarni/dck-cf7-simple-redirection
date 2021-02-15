@@ -8,12 +8,8 @@ class Dck_Cf7_Simple_Redirection
 
     public function __construct()
     {
-        if (defined('DCK_CF7_SIMPLE_REDIRECTION_VERSION')) {
-            $this->version = DCK_CF7_SIMPLE_REDIRECTION_VERSION;
-        } else {
-            $this->version = '1.0.0';
-        }
-        $this->plugin_name = 'dck-cf7-simple-redirection';
+        $this->version     = DCK_CF7_SIMPLE_REDIRECTION_VERSION;
+        $this->plugin_name = DCK_CF7_SIMPLE_REDIRECTION_NAME;
 
         $this->load_dependencies();
         $this->set_locale();
