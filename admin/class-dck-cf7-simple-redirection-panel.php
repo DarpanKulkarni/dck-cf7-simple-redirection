@@ -27,19 +27,19 @@ class Dck_Cf7_Simple_Redirection_Panel
     {
         $options = json_decode(get_post_meta($cf7->id(), 'dck_cf7_sr_options', true));
 
-        $enabled = $options != null ? $options->enabled : 0;
-        $type    = $options != null ? $options->type : '';
-        $page    = $options != null ? $options->page : '';
-        $url     = $options != null ? $options->url : '';
-        $new_tab = $options != null ? $options->new_tab : 0;
-        $delay   = $options != null ? $options->delay : 0;
+        $enabled    = $options != null ? $options->enabled : 0;
+        $type       = $options != null ? $options->type : '';
+        $pageId     = $options != null ? $options->page_id : '';
+        $custom_url = $options != null ? $options->custom_url : '';
+        $new_tab    = $options != null ? $options->new_tab : 0;
+        $delay      = $options != null ? $options->delay : 0;
 
         if ($enabled) {
             $validation_error = null;
 
-            if ($type == 'page' && $page == '') {
+            if ($type == 'page' && $pageId == '') {
                 $validation_error = __('Please select a page.', 'dck-cf7-simple-redirection');
-            } else if ($type == 'url' && ! filter_var($url, FILTER_VALIDATE_URL)) {
+            } else if ($type == 'url' && ! filter_var($custom_url, FILTER_VALIDATE_URL)) {
                 $validation_error = __('Please enter a valid custom URL.', 'dck-cf7-simple-redirection');
             }
 
@@ -56,6 +56,7 @@ class Dck_Cf7_Simple_Redirection_Panel
             <a href="https://darpan.co/wordpress-plugins" target="_blank"><?php _e('More plugins', 'dck-cf7-simple-redirection') ?></a>
         </p>
         <hr>
+
         <?php
 
         if ($cf7->id()) {
@@ -71,32 +72,29 @@ class Dck_Cf7_Simple_Redirection_Panel
                     <td>
                         <select name="dck_cf7_sr_type" id="dck_cf7_sr_type">
                             <option value="page" <?php echo $type == 'page' || $type == '' ? 'selected' : '' ?>><?php _e('Page', 'dck-cf7-simple-redirection') ?></option>
-                            <option value="url" <?php echo $type == 'url' ? 'selected' : '' ?>><?php _e('Custom URL', 'dck-cf7-simple-redirection') ?></option>
+                            <option value="custom_url" <?php echo $type == 'custom_url' ? 'selected' : '' ?>><?php _e('Custom URL', 'dck-cf7-simple-redirection') ?></option>
                         </select>
                     </td>
                 </tr>
 
                 <tr id="dck_cf7_sr_page_row">
-                    <th><label for="dck_cf7_sr_page"><strong><?php _e('Select a page:', 'dck-cf7-simple-redirection') ?></strong></label></th>
+                    <th><label for="dck_cf7_sr_page_id"><strong><?php _e('Select a page:', 'dck-cf7-simple-redirection') ?></strong></label></th>
                     <td>
-                        <select name="dck_cf7_sr_page" id="dck_cf7_sr_page">
-                            <option value="" <?php echo $page == '' ? 'selected' : '' ?>>--</option>
-                            <?php
-                            $wp_pages = get_pages();
-                            foreach ($wp_pages as $wp_page) {
-                                $wp_page_link = esc_attr(get_page_link($wp_page->ID));
-                                ?>
-                                <option value="<?php echo $wp_page_link ?>" <?php echo $page == $wp_page_link ? 'selected' : '' ?>><?php echo $wp_page->post_title ?></option>
-                                <?php
-                            }
-                            ?>
-                        </select>
+                        <?php
+                        wp_dropdown_pages(
+                            [
+                                'selected'         => $pageId,
+                                'name'             => 'dck_cf7_sr_page_id',
+                                'show_option_none' => __('Please select a page', 'dck-cf7-simple-redirection'),
+                            ]
+                        )
+                        ?>
                     </td>
                 </tr>
 
-                <tr id="dck_cf7_sr_url_row">
-                    <th><label for="dck_cf7_sr_url"><strong><?php _e('Enter a custom URL:', 'dck-cf7-simple-redirection') ?></strong></label></th>
-                    <td><input type="text" name="dck_cf7_sr_url" id="dck_cf7_sr_url" value="<?php echo $url ?>" placeholder="https://example.com/"></td>
+                <tr id="dck_cf7_sr_custom_url_row">
+                    <th><label for="dck_cf7_sr_custom_url"><strong><?php _e('Enter a custom URL:', 'dck-cf7-simple-redirection') ?></strong></label></th>
+                    <td><input type="text" name="dck_cf7_sr_custom_url" id="dck_cf7_sr_custom_url" value="<?php echo $custom_url ?>" placeholder="https://example.com/"></td>
                 </tr>
 
                 <tr>
