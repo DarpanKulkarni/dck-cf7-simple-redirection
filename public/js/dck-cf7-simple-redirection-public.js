@@ -8,9 +8,9 @@
 
             setTimeout(function () {
                 if (dck_cf7_sr.type === 'page') {
-                    redirect(dck_cf7_sr.page, new_tab);
-                } else if (dck_cf7_sr.type === 'url' && isValidHttpUrl(dck_cf7_sr.url)) {
-                    redirect(dck_cf7_sr.url, new_tab);
+                    redirect(dck_cf7_sr.page_url, new_tab);
+                } else if (dck_cf7_sr.type === 'custom_url' && isValidHttpUrl(dck_cf7_sr.custom_url)) {
+                    redirect(dck_cf7_sr.custom_url, new_tab);
                 }
             }, delay);
         }

@@ -9,10 +9,10 @@
         function toggle_destination(type) {
             if (type === 'page') {
                 $('#dck_cf7_sr_page_row').show();
-                $('#dck_cf7_sr_url_row').hide();
+                $('#dck_cf7_sr_custom_url_row').hide();
             } else {
                 $('#dck_cf7_sr_page_row').hide();
-                $('#dck_cf7_sr_url_row').show();
+                $('#dck_cf7_sr_custom_url_row').show();
             }
         }
     });
